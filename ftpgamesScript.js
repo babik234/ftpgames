@@ -116,6 +116,7 @@ function renderItem(item) {
     itemDiv.className = "game-item";
     itemDiv.innerHTML = `
     <div class="grid">
+    <a href="${item.game_url}" class="a" target="_blank">
         <img src="${item.thumbnail}" alt="" width="350" height="250">
 
         <div class="platform-list">${generatePlatformIcons(item.platform)}</div>
@@ -127,6 +128,7 @@ function renderItem(item) {
             <div class="textD">Description: <h3>${item.short_description}</h3></div>
      
     </div>
+    </a>
 </div>
     `;
     gamesGrid.appendChild(itemDiv);

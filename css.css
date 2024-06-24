@@ -317,6 +317,9 @@ nav h2 {
 }
 
 @media screen and (max-width: 450px) {
+    body {
+        overflow: hidden;
+    }
     .games-grid {
         justify-items: center;
     }

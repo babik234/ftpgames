@@ -219,3 +219,8 @@ document.getElementById("filters").addEventListener("click", () => {
         genreButtons.classList.toggle("hidden");
     }
 });
+window.addEventListener("resize", () => {
+    if (window.innerWidth <= 450) {
+        genreButtons.classList.remove("hidden");
+    }
+});

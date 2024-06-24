@@ -321,6 +321,7 @@ nav h2 {
     }
     .game-item {
         width: 100%;
+        padding: 20px;
     }
     .genre-buttons {
         margin: 0px;

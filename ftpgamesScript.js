@@ -220,7 +220,9 @@ document.getElementById("filters").addEventListener("click", () => {
     }
 });
 window.addEventListener("resize", () => {
-    if (window.innerWidth <= 450) {
+    if (window.innerWidth >= 450) {
         genreButtons.classList.remove("hidden");
+    } else {
+        genreButtons.classList.add("hidden");
     }
 });

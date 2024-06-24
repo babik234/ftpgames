@@ -165,9 +165,9 @@ function renderGenreButton(genre) {
             });
 
             button.classList.add("active");
-        }
-        if (mobileClick == true) {
-            removeGenreButtons();
+            if (window.innerWidth < 450) {
+                genreButtons.classList.add("hidden");
+            }
         }
     });
 }
@@ -203,17 +203,7 @@ function resetActiveButtons() {
         button.classList.remove("active");
     });
 }
-let filtersTabActive;
-document.getElementById("filters").addEventListener("click", () => {
-    mobileClick = true;
-    if (!filtersTabActive) {
-        document.getElementById("genre-buttons").style.display = "block";
-        filtersTabActive = true;
-    } else {
-        document.getElementById("genre-buttons").style.display = "none";
-        filtersTabActive = false;
-    }
-});
+
 function removeGenreButtons() {
     itemDivs = document.querySelectorAll(".genre-buttons");
     itemDivs.forEach((item) => {
@@ -221,3 +211,9 @@ function removeGenreButtons() {
         resetActiveButtons();
     });
 }
+
+document.getElementById("filters").addEventListener("click", () => {
+    if (window.innerWidth < 450) {
+        genreButtons.classList.toggle("hidden");
+    }
+});

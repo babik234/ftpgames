@@ -13,18 +13,15 @@ body {
 .games-grid {
     padding: 25px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
     justify-items: center;
 }
 .game-item {
     position: relative;
     overflow: hidden;
-    height: 420px; /* Set initial height */
-    width: 350px;
     background-color: #222;
     border-radius: 30px;
-    margin-bottom: 30px;
     transition: height 0.3s, box-shadow 0.3s; /* Smooth transition for height change */
 }
 .game-item img {
@@ -173,7 +170,7 @@ nav h2 {
     color: white;
     font-family: var(--nadpisFont);
     align-items: center;
-    padding: 0px 0px 20px 15px;
+    padding: 0px 0px 60px 15px;
 }
 .description {
     padding: 2px;
@@ -213,7 +210,9 @@ nav h2 {
     align-items: center;
     margin-left: 30px;
 }
-
+.genre-buttons.hidden {
+    display: none;
+}
 .genre-button {
     padding: 1px 25px;
     background-color: #222;
@@ -224,10 +223,10 @@ nav h2 {
     flex-shrink: 0;
 }
 
-.active {
+.genre-button.active {
     background-color: grey;
 }
-.active:hover {
+.genre-button.active:hover {
     background-color: rgb(94, 94, 94) !important;
 }
 
@@ -281,55 +280,30 @@ nav h2 {
     font-family: var(--nadpisFont);
     font-size: 30px;
 }
+.nadpis {
+    cursor: pointer;
+}
 @media screen and (max-width: 1600px) {
     .logo {
         display: none;
     }
 }
-@media screen and (max-width: 1850px) {
-    .games-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-@media screen and (max-width: 1500px) {
-    .games-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .game-item {
-        width: 400px;
-    }
-}
-@media screen and (max-width: 1275px) {
-    .games-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .game-item {
-        width: 500px;
-    }
-}
-@media screen and (max-width: 1075px) {
-    .games-grid {
-        grid-template-columns: repeat(1, 1fr);
-        justify-items: center;
-    }
-    .game-item {
-        width: 60%;
-    }
-}
+
 @media screen and (max-width: 450px) {
     .games-grid {
-        grid-template-columns: repeat(1, 1fr);
         justify-items: center;
     }
     .game-item {
         width: 100%;
     }
     .genre-buttons {
-        display: none;
+        margin: 0px;
         flex-direction: column;
         padding: 10px;
+        align-items: center;
+        justify-content: center;
     }
     .genre-buttons button {
-        width: 400px;
+        width: 350px;
     }
 }

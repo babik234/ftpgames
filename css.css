@@ -318,7 +318,7 @@ nav h2 {
 @media screen and (max-width: 450px) {
     .games-grid {
         justify-items: center;
-        padding: 15px;
+        margin: 10px;
     }
     .game-item {
         width: 100%;
